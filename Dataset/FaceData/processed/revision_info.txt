@@ -1,7 +1,0 @@
-arguments: src/align_dataset_mtcnn.py Dataset/FaceData/raw Dataset/FaceData/processed
---------------------
-tensorflow version: 2.13.0
---------------------
-git hash: b''
---------------------
-b''
