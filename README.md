@@ -1,23 +1,2 @@
-# FaceQTH
-Nhận diện khuôn mặt khá chuẩn xác bằng MTCNN và Facenet (phần này em sẽ bổ sung sau, tạm thời mọi người xem cách hoạt động ở text commands)
-
-Bản quyền: MIT License
-Copyright (c) 2016 David Sandberg
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-UTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Tạo thêm thư mục Models thuộc FaceQTH để chứa weight của model, link tải ở đây: https://drive.google.com/drive/folders/1APVQO-Huw8svtEIWjVts5Vx6Nc3IguXm?usp=drive_link
+(có thể xóa hết các mục ở Dataset/FaceData/raw và Dataset/FaceData/processed sau đó train lại từ đầu theo commands.txt)
