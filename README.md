@@ -41,7 +41,7 @@ Hệ thống này kết hợp **MTCNN** (phát hiện & căn chỉnh khuôn mặ
 
 ## 🚀 Khởi động nhanh  
 
-### 1️⃣ Cài môi trường  
+### 1) Cài môi trường  
 ```bash
 python -m venv venv  
 source venv/bin/activate  # Linux/Mac  
@@ -50,7 +50,79 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 ## Yêu cầu hệ thống:
--Python: 3.8 (đã thử và gợi ý)
--OS: Windows / Linux / MacOS
--RAM: ≥ 4GB (khuyên dùng ≥ 8GB)
--GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc)
+-Python: 3.8 (đã thử và gợi ý).  
+-OS: Windows / Linux / MacOS.  
+-RAM: ≥ 4GB (khuyên dùng ≥ 8GB).  
+-GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc).  
+## 2) Chạy chương trình
+```bash
+python GUI.py #giao diện local
+streamlit run app.py #giao diện web
+```
+## Cách sử dụng:
+*1. Thêm dữ liệu người dùng:*  
+-Thêm ảnh trực tiếp vào file **Dataset/FaceData/raw**.  
+-Chụp ảnh trực tiếp từ **webcam**  
+*2. Căn chỉnh và tiền xử lý:*  
+```bash
+python align_dataset_mtcnn.py
+```
+(sinh ảnh căn chỉnh và bounding boxes trong Dataset/FaceData/processed)  
+*3. Huấn luyện bộ phân loại*  
+```bash
+python classifier.py TRAIN Dataset/FaceData/processed Models/facemodel.pkl
+```
+*4. Nhận diện trực tiếp hoặc qua video*  
+Chạy webcam, video bằng local hoặc web, hiển thị **tên**, **độ tự tin** và **FPS**.  
+*5. Đánh giá hiệu năng*  
+```bash
+python validate_on_ifw.py
+```
+## 🏗 Kiến trúc hệ thống:
+```mermaid
+flowchart LR
+A[Ảnh / Video đầu vào] --> B[MTCNN: Phát hiện & Căn chỉnh]
+B --> C[Ảnh 160x160]
+
+subgraph Trích đặc trưng
+    C --> D[FaceNet: Embedding 128D]
+end
+
+subgraph Phân loại
+    D --> E{SVM}
+end
+
+E --> F[Kết quả: Tên, Confidence, FPS]
+```
+##Cấu trúc dự án:  
+```text
+FaceQTH/
+├── Dataset/
+│   └── FaceData/
+│       ├── raw/          # Ảnh gốc
+│       └── processed/    # Ảnh căn chỉnh + bounding boxes
+├── Models/
+│   ├── 20180402-114759.pb  # FaceNet pretrained
+│   ├── facemodel.pkl       # Bộ phân loại
+│   └── *.ckpt              # Checkpoints
+├── src/
+│   ├── align/                # MTCNN detector
+│   ├── facenet.py            # Tiện ích FaceNet
+│   ├── classifier.py         # Huấn luyện classifier
+│   ├── face_rec_cam.py       # Nhận diện camera
+│   ├── face_rec_cam_web.py   # Phiên bản Streamlit
+│   └── align_dataset_mtcnn.py # Tiền xử lý dataset
+├── test/        # Unit test
+├── video/       # Video test
+├── app.py       # Entry cho Streamlit
+├── GUI.py       # Entry cho PyQt GUI
+└── requirements.txt  # Thư viện
+```
+##Cấu hình và tinh chỉnh:  
+-Ngưỡng phát hiện: điều chỉnh trong dectect_face.py.  
+-Kích thước ảnh: 160x160 (mặc định).  
+-Bộ phân loại: SVM (mặc định).
+-FPS: tính bằng time.time() trong vòng lặp.  
+## Hiệu năng và đánh giá:  
+## Ảnh minh họa:  
+
