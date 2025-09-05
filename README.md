@@ -49,6 +49,7 @@ venv\Scripts\activate     # Windows
 
 pip install -r requirements.txt
 ```
+*(Tải weight và lưu vào thư mục `Models` tại file `Models/weight_installing`)*
 ## Yêu cầu hệ thống:
 - Python: 3.8 (đã thử và gợi ý).  
 - OS: Windows / Linux / MacOS.  
