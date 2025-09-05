@@ -56,6 +56,8 @@ pip install -r requirements.txt
 - GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc).  
 ## 2) Chạy chương trình
 ```bash
+python src/align_dataset_mtcnn.py  Dataset/FaceData/raw Dataset/FaceData/processed --image_size 160 --margin 32  --random_order --gpu_memory_fraction 0.25 #cắt riêng khuôn mặt
+python src/classifier.py TRAIN Dataset/FaceData/processed Models/20180402-114759.pb Models/facemodel.pkl --batch_size 1000 #model training
 python GUI.py #giao diện local
 streamlit run app.py #giao diện web
 ```
