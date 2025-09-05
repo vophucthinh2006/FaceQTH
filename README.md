@@ -4,7 +4,7 @@
 
 ---
 
-## Giới thiệu  
+## Giới thiệu:  
 Hệ thống này kết hợp **MTCNN** (phát hiện & căn chỉnh khuôn mặt) và **FaceNet** (tạo vector embedding), cùng với bộ phân loại (**SVM**) để **nhận diện khuôn mặt chính xác cao**.  
 
 Hỗ trợ cả:  
@@ -15,7 +15,7 @@ Hỗ trợ cả:
 
 ---
 
-## Điểm nổi bật  
+## Điểm nổi bật:  
 
 ### GUI (PyQt)  
 - Nút dễ sử dụng: **bật/tắt camera**, **thêm người dùng**, **nhận diện**.  
@@ -29,7 +29,7 @@ Hỗ trợ cả:
 
 ---
 
-## Tính năng chính  
+## Tính năng chính:  
 - **Phát hiện & căn chỉnh khuôn mặt** bằng _MTCNN_ với **5 điểm mốc** (mắt, mũi, miệng).  
 - **Sinh vector embedding** bằng _FaceNet_ (128 chiều).  
 - **Nhận diện danh tính** bằng **SVM**.  
@@ -39,9 +39,9 @@ Hỗ trợ cả:
 
 ---
 
-## Khởi động nhanh  
+## Khởi động nhanh:  
 
-### 1) Cài môi trường  
+### 1) Cài môi trường:  
 ```bash
 python -m venv venv  
 source venv/bin/activate  # Linux/Mac  
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 - OS: Windows / Linux / MacOS.  
 - RAM: ≥ 4GB (khuyên dùng ≥ 8GB).  
 - GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc).  
-## 2) Chạy chương trình
+### 2) Chạy chương trình:
 ```bash
 python GUI.py #giao diện local
 streamlit run app.py #giao diện web
@@ -69,13 +69,13 @@ streamlit run app.py #giao diện web
 python src/align_dataset_mtcnn.py  Dataset/FaceData/raw Dataset/FaceData/processed --image_size 160 --margin 32  --random_order --gpu_memory_fraction 0.25 #cắt riêng khuôn mặt
 ```
 (sinh ảnh căn chỉnh và bounding boxes trong `Dataset/FaceData/processed`)  
-*3. Huấn luyện bộ phân loại*  
+*3. Huấn luyện bộ phân loại:*  
 ```bash
 python src/classifier.py TRAIN Dataset/FaceData/processed Models/20180402-114759.pb Models/facemodel.pkl --batch_size 1000 #model training
 ```
-*4. Nhận diện trực tiếp hoặc qua video*  
+*4. Nhận diện trực tiếp hoặc qua video:*  
 Chạy webcam, video bằng local hoặc web, hiển thị **tên**, **độ tự tin** và **FPS**.  
-*5. Đánh giá hiệu năng*  
+*5. Đánh giá hiệu năng:*  
 ```bash
 python validate_on_ifw.py
 ```
