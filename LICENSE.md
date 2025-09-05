@@ -1,6 +1,4 @@
 # FaceQTH
-Nhận diện khuôn mặt khá chuẩn xác bằng MTCNN và Facenet (phần này em sẽ bổ sung sau, tạm thời mọi người xem cách hoạt động ở text commands)
-
 Bản quyền: MIT License
 Copyright (c) 2016 David Sandberg
 
@@ -21,3 +19,4 @@ UTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
