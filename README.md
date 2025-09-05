@@ -50,10 +50,10 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 ## Yêu cầu hệ thống:
--Python: 3.8 (đã thử và gợi ý).  
--OS: Windows / Linux / MacOS.  
--RAM: ≥ 4GB (khuyên dùng ≥ 8GB).  
--GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc).  
+- Python: 3.8 (đã thử và gợi ý).  
+- OS: Windows / Linux / MacOS.  
+- RAM: ≥ 4GB (khuyên dùng ≥ 8GB).  
+- GPU: NVIDIA CUDA/cuDNN (tùy chọn, để tăng tốc).  
 ## 2) Chạy chương trình
 ```bash
 python GUI.py #giao diện local
@@ -94,7 +94,7 @@ end
 
 E --> F[Kết quả: Tên, Confidence, FPS]
 ```
-##Cấu trúc dự án:  
+## Cấu trúc dự án:  
 ```text
 FaceQTH/
 ├── Dataset/
@@ -118,24 +118,25 @@ FaceQTH/
 ├── GUI.py       # Entry cho PyQt GUI
 └── requirements.txt  # Thư viện
 ```
-##Cấu hình và tinh chỉnh:  
--Ngưỡng phát hiện: điều chỉnh trong dectect_face.py.  
--Kích thước ảnh: 160x160 (mặc định).  
--Bộ phân loại: SVM (mặc định).
--FPS: tính bằng time.time() trong vòng lặp.  
+## Cấu hình và tinh chỉnh:  
+- Ngưỡng phát hiện: điều chỉnh trong dectect_face.py.  
+- Kích thước ảnh: 160x160 (mặc định).  
+- Bộ phân loại: SVM (mặc định).
+- FPS: tính bằng time.time() trong vòng lặp.  
 ## Hiệu năng và đánh giá:  
+![Với tệp data hiện tại, model nhận diện rất tốt](matrix.jpg)
 ## Ảnh minh họa:  
--Giao diện local: `docs/GUI.png`.  
--Giao diện webcam local: `docs/GUI_cam.png`.  
--Giao diện video local: `docs/GUI_video.png`.  
--Giao diện web: `docs/web.png`.  
--Giao diện webcam web: `docs/web_cam.png`.  
--Giao diện webcam video: `docs/web_video.png`.  
+- Giao diện local: `docs/GUI.png`.  
+- Giao diện webcam local: `docs/GUI_cam.png`.  
+- Giao diện video local: `docs/GUI_video.png`.  
+- Giao diện web: `docs/web.png`.  
+- Giao diện webcam web: `docs/web_cam.png`.  
+- Giao diện webcam video: `docs/web_video.png`.  
 ## Phát triển và đóng góp:  
 *1. Quy trình đóng góp:*  
--Fork repository và tạo nhánh mới (`feature/*`).  
--Commit & push thay đổi của bạn.  
--Mở Pull Request.  
+- Fork repository và tạo nhánh mới (`feature/*`).  
+- Commit & push thay đổi của bạn.  
+- Mở Pull Request.  
 *2. Báo cáo lỗi:* Vui lòng cung cấp các thông tin sau:  
 - Hệ điều hành (OS).
 - Phiên bản Python.
@@ -143,10 +144,10 @@ FaceQTH/
 - Các bước tái hiện lỗi.
 - Screenshot (nếu có).
 ## Lời cảm ơn và liên hệ:  
--**MTCNN** – nhóm tác giả gốc đã phát triển mô hình Multi-task Cascaded Convolutional Networks cho phát hiện khuôn mặt.  
--**FaceNet** – nhóm nghiên cứu của Google đã xây dựng nền tảng nhận diện khuôn mặt mạnh mẽ, mở đường cho các hệ thống embedding hiện đại.  
--**Scikit-learn** – cộng đồng phát triển đã cung cấp công cụ SVM và nhiều thuật toán machine learning tiện lợi.  
--**Streamlit & Streamlit-webrtc** – đội ngũ Streamlit đã giúp việc xây dựng giao diện và chạy real-time camera trở nên dễ dàng.  
--**TensorFlow – framework** hỗ trợ huấn luyện và triển khai mô hình deep learning.  
+- **MTCNN** – nhóm tác giả gốc đã phát triển mô hình Multi-task Cascaded Convolutional Networks cho phát hiện khuôn mặt.  
+- **FaceNet** – nhóm nghiên cứu của Google đã xây dựng nền tảng nhận diện khuôn mặt mạnh mẽ, mở đường cho các hệ thống embedding hiện đại.  
+- **Scikit-learn** – cộng đồng phát triển đã cung cấp công cụ SVM và nhiều thuật toán machine learning tiện lợi.  
+- **Streamlit & Streamlit-webrtc** – đội ngũ Streamlit đã giúp việc xây dựng giao diện và chạy real-time camera trở nên dễ dàng.  
+- **TensorFlow – framework** hỗ trợ huấn luyện và triển khai mô hình deep learning.  
 **Tác giả**: *Võ Phúc Thịnh*  
 Nếu có thắc mắc, đề xuất hay muốn đóng góp, bạn có thể mở **Issue** hoặc **Pull Request** trực tiếp trên GitHub repository.
