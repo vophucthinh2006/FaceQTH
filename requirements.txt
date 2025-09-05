@@ -8,3 +8,5 @@ Pillow
 requests
 psutil
 imageio
+streamlit
+streamlit_webrtc
